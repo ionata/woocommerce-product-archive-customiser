@@ -691,8 +691,8 @@ if ( in_array( 'woocommerce/woocommerce.php', apply_filters( 'active_plugins', g
 			 * @return void
 			 */
 			function woocommerce_pac_show_product_categories() {
-				global $post;
-				$terms_as_links = get_the_term_list( $post->ID, 'product_cat', '', ', ', '' );
+				global $product;
+				$terms_as_links = get_the_term_list( $product->get_id(), 'product_cat', '', ', ', '' );
 				echo '<p class="categories"><small>' . wp_kses_post( $terms_as_links ) . '</small></p>';
 			}
 
